@@ -34,7 +34,7 @@ if (screen.width >= 768) {
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
 			//apiPath: "https://live2d.fghrsh.net/api/",
-			cdnPath: "https://unpkg.zhimg.com/akilar-live2dapi@latest/"
+			cdnPath: "https://unpkg.zhimg.com/akilar-live2dapi@latest/"//因为jsdelivr不支持50MB以上的包的加速，可能报403错误，所以用的vercel的CDN服务。
 		});
 	});
 }
