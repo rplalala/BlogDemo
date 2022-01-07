@@ -1,33 +1,39 @@
 ---
 title: Java基础随笔
-date: 2022-01-02 19:00:36
-updated: 2022-01-02 20:29:55
-tags: [Java基础,随笔]
+tags:
+  - Java基础
+  - 随笔
 categories: 随笔
 sticky: 1
+abbrlink: f96a58f3
+date: 2022-01-02 19:00:36
+updated: 2022-01-02 20:29:55
 ---
 
-# JavaBase随笔
-## 一、成员变量、局部变量、类变量
+{% note info modern %}
+本文只是记录在我学习完 Java基础阶段后，在今后的学习中遇到遗忘的知识，再次记录加深记忆的过程，并不是学习 Java基础 的教程 。
+{% endnote %}
+
+# 成员变量、局部变量、类变量
 1. **成员变量：** 定义在类里方法外，没被static修饰的变量。一定要有默认值
    
 2. **局部变量：** 定义在方法、构造方法、代码块里的变量，随着局部的结束而被销毁。可以没有默认值
    
 3. **类变量：** 定义在类里方法外，被static修饰的变量。一定要有默认值
 
-## 二、数组与字符串的长度
+# 数组与字符串的长度
 1. array.length 读取数组的长度;
 
 2. str.length() 读取字符串的长度；
 
-## 三、程序的健壮性
+# 程序的健壮性
 **最好不要用可能为NULL值的变量去引用方法**
 
     1."admin".equals(userName)
     2. userName.equals("admin") 
     效果一样，但前者更安全
 
-## 四、break可以直接结束标识处的循环
+# break可以直接结束标识处的循环
 **例：达到if条件后,break直接结束外层for循环，而不是只结束里层for循环**
 
 ```java
@@ -39,7 +45,7 @@ sticky: 1
         }
     }
 ```
-## 五、同一个模块中导入工具类的方法
+# 同一个模块中导入工具类的方法
 ```java
 import java.包名.类名;
 例如：
@@ -47,7 +53,7 @@ import java.包名.类名;
     import java.io.*;
 ```
 
-## 六、方法的返回值
+# 方法的返回值
 1. **若一个方法有返回值，则方法的最外层必须要有一个return（只有在最外层return了，才相当于告诉编译器这个方法我return了）。**
    
 2. **不能只在代码块（for、while、if……）中直接return，而不在方法最外层return（会出现编译错误）**
@@ -75,7 +81,7 @@ import java.包名.类名;
   
 * 此时方法返回值仍为 1 ，最外层的return只是起到防止编译出错的作用
 
-## 七、java新建数组
+# java新建数组
 1. 与C语言不同,java新建数组时，数组的长度可以直接传变量
    ```java
         Scanner scan = new Scanner(System.in);
@@ -94,24 +100,24 @@ import java.包名.类名;
 
    ```
 
-## 八、条件运算符… ? … : …
+# 条件运算符… ? … : …
 **常用来取代if…else…**
 
     例：
         score >= 60 ? "通过" : "不通过"
         若 score >= 60 为 true，则返回"通过"，否则返回"不通过"
 
-## 九、JavaBean
+# JavaBean
 **Java中封装类的一种规范**
 1. 所有属性为private
 2. 提供默认构造方法
 3. 提供getter和setter
 4. 实现serializable接口
 
-## 十、集合
+# 集合
 集合不能存放基本数据类型，只能存放对象的引用，例如包装类
 
-## 十一、常量池
+# 常量池
 * **包装类** 和 **String** 的比较用 equals 不用 == ，但是调用常量池的话，就算用 == 二者也会相等。
   
 * 在 -128 - 127 范围内，Integer存在于常量池中，此时是将Integer变量指向常量池中的值。若在常量池的范围外，则是在内存中新建一个Integer变量。
@@ -147,7 +153,7 @@ import java.包名.类名;
 ```
 * 只要使用new方法，便需要创建新的对象
 
-## 十二、switch
+# switch
 在switch的case中声明过一次变量后，之后的case不用再次声明
 ```java
   case 1:Integer a = 2;break;   
@@ -160,18 +166,18 @@ import java.包名.类名;
 
 ```
 
-## 十三、ArrayList 和 Vector
+# ArrayList 和 Vector
 * Vector是线程同步的，在同一时间内只允许一个线程访问，安全但效率低；
   
 * ArrayList是线程不同步的，在同一时间内允许多个线程访问，不安全但效率高
 
-## 十四、链表、数组内存的区别
+# 链表、数组内存的区别
 * 链表的内存空间不连续，所以不能根据索引直接得到结点位置
   
 * 数组的内存空间是连续的，可以直接根据索引得到元素，时间复杂度为O(1)
 
-## 十五、String 和 StringBuilder
-### 1. **String是一种特殊的引用数据类型，它具有值不可变性**
+# String 和 StringBuilder
+## **String是一种特殊的引用数据类型，它具有值不可变性**
 * **String本身是不可改变的，它只可被赋值一次**。每一次内容被更改，实际上就是产生了一个新的字符串对象，因此对String的多次修改会浪费大量空间。
 
 * StringBuilder则不同，每次都是修改自身，不会产生新的对象。
@@ -184,7 +190,7 @@ import java.包名.类名;
 例如：频繁的字符串拼接用+连接效率低，建议用StringBuilder**
 
 
-### 2. **String的常量池**
+## **String的常量池**
 * 若不通过new对象的方式，而是直接赋予字符串一个值，则会引用了常量池里的字符串。若常量池不存在该字符串，则在常量池中创建该字符串。
   
 * 若是用new 对象的方法构建字符串，则会在内存中开辟一个新空间存放这个对象。
@@ -197,7 +203,7 @@ import java.包名.类名;
     
 ```
 
-### 3. **String的拼接与常量池**
+## **String的拼接与常量池**
 * 直接看如下例子
 ```java
     String str1 = "str";        //放进常量池
@@ -215,7 +221,7 @@ import java.包名.类名;
     * 若常量池中不存在"abc" ，则先在常量池中创建"abc"，再在堆内存中创建值为"abc"的字符串对象s。共创建了2个对象
     * 若常量池中存在"abc"，则直接从常量池中拿"abc"，再在堆内存中创建值为"abc"的字符串对象s。共创建了1个对象
 
-## 十六、基本数据类型
+# 基本数据类型
 1. **所占字节**（1个字节是8位）
 
 | 类型 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 字节 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | 位数 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
@@ -268,7 +274,7 @@ import java.包名.类名;
    * 最大值：Double.MAX_VALUE=1.7976931348623157E308  （2的1024次方-1）
    * 最大位数：小数点后16位
 
-## 十七、HashMap底层、红黑二叉树
+# HashMap底层、红黑二叉树
 1. **HashMap实现原理**
    * 底层：数组+单向链表+红黑二叉树
    * 先通过对HashCode进行运算，将键值存到数组中的对应下标。
@@ -277,7 +283,7 @@ import java.包名.类名;
 2. **红黑二叉树**
    * 一种特殊的平衡二叉搜索树，防止二叉搜索树过长，使时间复杂度不能保持对数级
 
-## 十八、冒泡排序和选择排序（以下代码都以升序为例）
+# 冒泡排序和选择排序（以下代码都以升序为例）
 1. **冒泡排序**
 
 ```java
@@ -335,7 +341,7 @@ public void selectSort(){
 }
 ```
 
-## 十九、 && 和 || 的判断规则和应用方法
+# && 和 || 的判断规则和应用方法
 1. **&&的运算规则：**
     * 当符号左边表达式为false时，&&将直接返回false不再判断符号右边表达式的结果。
     * 当符号左边表达式为true时，将继续判断符号右边表达式。
@@ -347,11 +353,11 @@ public void selectSort(){
     * 例如：判断回文素数时，由于符合回文数的数更少，我们应该先判断回文数，省去不必要的判断
     * 即：判断回文数 && 判断素数
 
-## 二十、Java7新特性，数字下划线
+# Java7新特性，数字下划线
     例如：100_000_000 相当于 现实生活中的100,000,000
     便于我们计数，在编译中会自动省去下划线
 
-## 二十一、hashcode 和 equals
+# hashcode 和 equals
 * 如果equals一样的话，hashcode也必须一样(反之不成立);若equals重写了，hashcode最好也要重写。
    
 * 没有重写过的equals比较的是地址（相当于==），重写过的比较的是值
@@ -366,32 +372,33 @@ public void selectSort(){
   * HashCode相同，内存地址也可能不同。但地址相同，hashcode相同
   * hashCode返回的是经过处理后的对象内存地址结构，每个对象的内存地址都不同，所以hashCode也不同。
 
-## 二十二、boolean containsKey(Object key)的判断原则
-### 1. **见containsKey的源码可得：**
+# boolean containsKey(Object key)的判断原则
+1. **见containsKey的源码可得：**
+
 ```java
 if (e.hash == hash && ((k = e.key) == key || (key != null && key.equals(k))))
 ```
 判断一个key是否存在于map中时，先判断二者的 **hash** ，再判断二者的 **地址** 或 **equals方法** 是否相等
 
-### 2. **所以可得如下结论：**
+2. **所以可得如下结论：**
 
 * 传入的类需重写equals和hashcode方法才能对key进行值判断。例如String和Integer重写了equals和hashcode方法，所以只要二者值相同即可认为是同一个key。
   
 * 若自定义类没有重写equals和hashcode方法，比较的是地址。则必须是同一个对象（地址相同）才是同一个key。例如链表节点，树节点等
 
-## 二十三、浮点数取整
+# 浮点数取整
 * Math.ceil(double n); //对浮点数向上取整
 * Math.floor(double n); //对浮点数向下取整
 * Math.round(double n); //对浮点数四舍五入取整，不够准确。例如：-11.5 -> -11
 
-### 利用大数类进行准确的四舍五入
+**利用大数类进行准确的四舍五入**
 ```
 //对10.7进行四舍五入取整
 new BigDecimal("10.7").setScale(0,BigDecimal.ROUND_HALF_UP).intValue();
 ```
 
-## 二十四、static
-### 静态变量
+# 二十四、static
+## 静态变量
 ```
 1. 静态变量被所有的对象所共享，当且仅当在类初次加载时会被初始化。
 
@@ -400,7 +407,7 @@ new BigDecimal("10.7").setScale(0,BigDecimal.ROUND_HALF_UP).intValue();
 3. 局部变量不能设为静态，只有成员变量可以
 
 ```
-### 静态方法
+## 静态方法
 ```
 1. 静态方法内不能使用非静态方法、非静态变量
 
@@ -413,7 +420,7 @@ new BigDecimal("10.7").setScale(0,BigDecimal.ROUND_HALF_UP).intValue();
 5. 非静态方法和变量必须通过实例化对象调用
 
 ```
-### 静态内部类
+## 静态内部类
 ```
   1. 如果一个类要被声明为static，只有一种情况 —— 静态内部类。如果将外部类声明为static，编译都不会过。
 
@@ -459,13 +466,13 @@ public class Main{
 }
 ```
 
-## 二十五、不能实例化对象的原因
+# 不能实例化对象的原因
 1. 接口 —— interface
 2. 抽象类 —— abstract（有抽象方法一定是抽象类，抽象类不一定有抽象方法）
 3. 构造方法访问权限为private
 
-## 二十六、Scanner类 in.next() 和 in.nextLine()
-### in.next() 
+# Scanner类 in.next() 和 in.nextLine()
+## in.next() 
   * 检测到 有效字符 前的空格/回车会被舍去
   * 检测到 有效字符 后再遇到空格/回车则结束读取，并且该空格/回车作为结束符舍去
 
@@ -473,7 +480,7 @@ public class Main{
 输入"   \n  \n  12 34\n"，得到"12"
 ```
 
-### in.nextLine()
+## in.nextLine()
 * 直接开始读取，可以读取空格，遇到回车则结束读取，并且该回车会作为结束符舍去
 
 ```java

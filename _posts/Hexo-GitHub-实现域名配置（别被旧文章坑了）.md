@@ -1,8 +1,11 @@
 ---
 title: Hexo+GitHub 实现域名配置（别被旧文章坑了）
-date: 2022-01-03 14:26:49
-tags: [hexo,域名]
+tags:
+  - 博客
+  - 域名
 categories: 博客
+abbrlink: f77f8e26
+date: 2022-01-03 14:26:49
 ---
 
 # 买域名并实名认证
@@ -41,7 +44,7 @@ categories: 博客
 4. 185.199.111.153
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;而网上教学多为Ping一个IP，然后通过A将申请的域名指向这个IP。例如：dingzihang00.top -> 185.199.108.153。但当GitHub IP发生变化时，例如变成 185.199.109.153 时，就对应不上从而导致跳转失败了。
+而网上教学多为Ping一个IP，然后通过A将申请的域名指向这个IP。例如：dingzihang00.top -> 185.199.108.153。但当GitHub IP发生变化时，例如变成 185.199.109.153 时，就对应不上从而导致跳转失败了。
 
 CANME 就不会出现这个问题，因为无论IP怎么改，rplalala.github.io 都是与它IP一一对应的，
 

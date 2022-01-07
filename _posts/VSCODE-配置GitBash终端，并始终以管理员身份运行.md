@@ -1,8 +1,10 @@
 ---
 title: VSCODE 配置GitBash终端，并始终以管理员身份运行
-date: 2022-01-03 15:43:02
-tags: [vscode,hexo]
+tags:
+  - vscode
 categories: vscode
+abbrlink: 1e5452bd
+date: 2022-01-03 15:43:02
 ---
 
 # settings.json 配置
