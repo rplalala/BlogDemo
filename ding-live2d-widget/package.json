@@ -1,0 +1,11 @@
+{
+  "name": "ding-live2d-widget",
+  "version": "1.0.0",
+  "description": "live2d_copy",
+  "main": "autoload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rplalala",
+  "license": "ISC"
+}
