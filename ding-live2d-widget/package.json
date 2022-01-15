@@ -1,6 +1,6 @@
 {
   "name": "ding-live2d-widget",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "live2d_copy",
   "main": "autoload.js",
   "scripts": {
